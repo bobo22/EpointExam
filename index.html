@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <!-- 用于响应式网站 -->
+    <!-- <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /> -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/mustache.js"></script>
+    <script src="js/mock.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <title>新点智慧建筑云</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 头部div -->
+        <div class="top clearfix">
+            <img src="images/logo.png" />
+            <img src="images/web-title.png" />
+            <!-- 头部右侧选项div -->
+            <div class="top-rightside r">
+                <img src="images/eg-user.png">
+                <span>你好 , </span><span>张三</span>
+                <img src="images/email.png">
+                <img src="images/close.png">
+                <div class="num-icon">
+                    2
+                </div>
+            </div>
+        </div>
+        <!-- 操作部分div -->
+        <div class="operation clearfix">
+            <h1 class="l">某某某项目.emjsx</h1>
+            <!-- 右侧操作部分div -->
+            <div class="operation-icon r">
+                <ul>
+                    <li class="li-down">
+                        <img src="images/down-icon.png">
+                        <a href="">下载</a>
+                    </li>
+                    <li class="li-comment">
+                        <img src="images/comment-icon.png">
+                        <a href="">评论</a>
+                    </li>
+                    <li class="li-label">
+                        <img src="images/label-icon.png">
+                        <a href="">设置标签</a>
+                    </li>
+                    <li class="li-history">
+                        <img src="images/history-icon.png">
+                        <a href="">操作痕迹</a>
+                    </li>
+                    <li class="li-about">
+                        <img src="images/about-icon.png">
+                        <a href="">关于项目</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 左侧树部分div -->
+        <div class="lefttree">
+            <div class="title">
+                <span class="title-first">名称</span>
+                <span class="title-second">造价</span>
+            </div>
+        </div>
+        <!-- 右侧树部分div -->
+        <div class="righttable">
+            <div class="righttable-title">
+                <ul>
+                    <li class="checkstatus">当前版本</li>
+                    <li>历史版本</li>
+                </ul>
+            </div>
+            <div class="righttable-content">
+                <!-- 现在版本 -->
+                <div class="current-version">
+                    <h2>工程项目施工协调和沟通管理要</h2>
+                    <p>1，树立全员沟通意识</p>
+                    <p>在单位内部加强教育，使每个员工认识到工程管理是以业主为服务主体，以项目为服务目标，多方参与的一项全方位的综合管理工作，使全员树立沟 单位内部加强教育，使每个员工认识到工程管理是以业主为服务主体，以项目为服务目标，多方参与的一项全方位的综合管理工作，使全员树立沟通 位内部加强教育，使每个员工认识到工程管理是以业主为服务主体，以项目为服务目标，多方参与的一项全方位的综合管理工作，使全员树立沟通协 内部加强教育，使每个员工认识到工程管理是以业主为服务主体。 </p>
+                    <p>以项目为服务目标，多方参与的一项全方位的综合管理工作，使全员树立沟通协调意识，在单位内部加强教育，使每个员工认识到工程管理是以业主 项目为服务目标，多方参与的一项全方位的综合管理工作，使全员树立沟通协调意识，在单位内部加强教育，使每个员工认识到工程管理是以业主，多方参与的一项全方位的综合管理工作，使全员树立沟通协调意识在单位内部加强教育，使每个员工认识到工程管理是以业主为服务 服务目标，多方参与的一项全方位的综合管理工作， 务目标，多方参与的一项全方位的综合管理工作，使全员树立沟通协调意识。</p>
+                    <p>以项目为服务目标，多方参与的一项全方位的综合管理工作，使全员树立沟通协调意识，在单位内部加强教育，使每个员工认识到工程管理是以业主 项目为服务目标，多方参与的一项全方位的综合管理工作，使全员树立沟通协调意识，在单位内部加强教育，使每个员工认识到工程管理是以业主为 目为服务目标，多方参与的一项全方位的综合管理工作，使全员树立沟通协调意识在单位内部加强教育。
+                    </p>
+                </div>
+                <!-- 历史版本 -->
+                <div class="history-version">
+                    <table>
+                        <thead class="history-thead">
+                            <td>版本号</td>
+                            <td>文件大小</td>
+                            <td>上传者</td>
+                            <td>上传时间</td>
+                            <td>操作</td>
+                            <td>查看</td>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- mock数据脚本 -->
+    <script id="template" type="x-tmpl-mustache">
+        {{#list}}
+        <tr>
+            <td>{{version}}</td>
+            <td>{{filesize}}</td>
+            <td>{{email}}</td>
+            <td>{{uploadtime}}</td>
+            <td>{{operate}}</td>
+            <td><img src="images/view-icon.png" class="look"/></td>
+        </tr>
+        {{/list}}
+    </script>
+    <script src="js/index.js"></script>
+</body>
